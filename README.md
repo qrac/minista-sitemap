@@ -1,1 +1,1 @@
-# minista-map
+# minista-sitemap
