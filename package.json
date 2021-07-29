@@ -1,0 +1,47 @@
+{
+  "name": "minista-sitemap",
+  "description": "Site map CSS for coding delivery",
+  "version": "0.1.0",
+  "cdn": "dist/minista-sitemap.css",
+  "cdn:min": "dist/minista-sitemap.min.css",
+  "main": "dist/minista-sitemap.css",
+  "files": [
+    "dist"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/qrac/minista-sitemap",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/qrac/minista-sitemap"
+  },
+  "bugs": {
+    "url": "https://github.com/qrac/minista-sitemap/issues"
+  },
+  "keywords": [
+    "coding",
+    "css",
+    "sitemap",
+    "japanese",
+    "minista",
+    "minista-sitemap"
+  ],
+  "author": {
+    "name": "Qrac",
+    "url": "https://qrac.jp"
+  },
+  "organization": {
+    "name": "QRANOKO",
+    "url": "https://qranoko.jp"
+  },
+  "scripts": {
+    "build": "node ./src",
+    "prepublishOnly": "npm run build",
+    "clean": "trash ./dist"
+  },
+  "prettier": {
+    "semi": false
+  },
+  "devDependencies": {
+    "clean-css": "^5.1.3"
+  }
+}

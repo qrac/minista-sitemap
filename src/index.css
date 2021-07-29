@@ -1,0 +1,52 @@
+/*! ___pjtName___ v___pkgVersion___ ___pkgLicense___ by ___pkgAuthorName___ */
+
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: inherit;
+}
+
+html {
+  word-break: break-word;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  font-size: 1rem;
+  line-height: 1.5;
+  word-break: break-word;
+}
+
+.minista-sitemap {
+  --theme-tx-1: #1a1a1a;
+  --theme-tx-2: #292929;
+  --theme-tx-3: #6f6f6f;
+  --theme-bg-1: #ffffff;
+  --theme-bg-2: #f2f2f2;
+  --theme-bg-3: #e4e4e4;
+  --theme-lk-1: #0070f3;
+  --theme-lk-2: #0165d6;
+  --theme-lk-tx: #ffffff;
+  --theme-ac-1: #2ce7d2;
+}
+
+.minista-sitemap {
+  --theme-font-sans: "Hiragino Sans", "Hiragino Kaku Gothic ProN",
+    "Noto Sans Japanese", Meiryo, "Yu Gothic Medium", sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  --theme-font-sans-en: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  --theme-font-mono: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New",
+    Meiryo, monospace, serif;
+}
+
+.minista-sitemap {
+  background: var(--theme-bg-1);
+  color: var(--theme-tx-2);
+  font-family: var(--theme-font-sans);
+}

@@ -1,0 +1,12 @@
+{
+  "name": "minista-sitemap-test",
+  "private": true,
+  "scripts": {
+    "dev": "minista",
+    "build": "minista build",
+    "clean": "trash ./dist"
+  },
+  "devDependencies": {
+    "minista": "^0.8.3"
+  }
+}
