@@ -14,7 +14,7 @@
 
 ## About
 
-コーディング納品用のサイトマップを簡単に作る CSS。主に [minista](https://github.com/qrac/minista) での利用を想定。
+コーディング納品用のサイトマップを簡単に作る CSS。主に [minista](https://github.com/qrac/minista) での利用を想定しつつ、フレームワーク非依存の CSS として設計。webpack などにバンドルされない CDN 版の利用を推奨。
 
 ## How To Use
 
