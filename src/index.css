@@ -16,26 +16,16 @@ html {
   -webkit-tap-highlight-color: transparent;
 }
 
-body {
+.minista-sitemap {
+  background: var(--theme-bg-1, #ffffff);
+  color: var(--theme-tx-2, #000000);
   font-size: 1rem;
+  font-family: var(--theme-font-sans, sans-serif);
   line-height: 1.5;
   word-break: break-word;
 }
 
-.minista-sitemap {
-  --theme-tx-1: #1a1a1a;
-  --theme-tx-2: #292929;
-  --theme-tx-3: #6f6f6f;
-  --theme-bg-1: #ffffff;
-  --theme-bg-2: #f2f2f2;
-  --theme-bg-3: #e4e4e4;
-  --theme-lk-1: #0070f3;
-  --theme-lk-2: #0165d6;
-  --theme-lk-tx: #ffffff;
-  --theme-ac-1: #2ce7d2;
-}
-
-.minista-sitemap {
+.minista-sitemap-skin-basic {
   --theme-font-sans: "Hiragino Sans", "Hiragino Kaku Gothic ProN",
     "Noto Sans Japanese", Meiryo, "Yu Gothic Medium", sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
@@ -45,8 +35,78 @@ body {
     Meiryo, monospace, serif;
 }
 
-.minista-sitemap {
-  background: var(--theme-bg-1);
-  color: var(--theme-tx-2);
-  font-family: var(--theme-font-sans);
+.minista-sitemap-skin-basic {
+  --theme-tx-1: #3e4041;
+  --theme-tx-2: #4e5253;
+  --theme-tx-3: #6d7272;
+  --theme-bg-1: #eff4f7;
+  --theme-bg-2: #d8dee2;
+  --theme-bg-3: #9ca0a1;
+  --theme-bd-1: #dbe2e2;
+  --theme-lk-1: #00a4af;
+  --theme-lk-tx: #ffffff;
+  --theme-ac-1: #2ce7d2;
+}
+
+.minista-sitemap-theme-basic .minista-sitemap-ui-wrap {
+  min-height: 100vh;
+  padding-top: max(2vw, 20px);
+  padding-right: max(4vw, 16px);
+  padding-left: max(4vw, 16px);
+  padding-bottom: 40vh;
+}
+
+.minista-sitemap-theme-basic .minista-sitemap-ui-header {
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--theme-bd-1);
+}
+
+.minista-sitemap-theme-basic .minista-sitemap-ui-header-grid {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+
+.minista-sitemap-theme-basic .minista-sitemap-ui-header-column {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.minista-sitemap-theme-basic .minista-sitemap-ui-header-heading {
+  font-size: 1.5rem;
+  font-weight: 800;
+  font-family: var(--theme-font-sans-en);
+  line-height: 1.125;
+}
+
+.minista-sitemap-theme-basic .minista-sitemap-ui-header-date {
+  display: inline-flex;
+  padding: 4px 8px;
+  background-color: var(--theme-bg-2);
+  border-radius: 3px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  font-family: var(--theme-font-sans-en);
+  line-height: 1;
+}
+
+.minista-sitemap-theme-basic .minista-sitemap-ui-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  padding: 8px 16px;
+  background-color: var(--theme-lk-1);
+  border-radius: 6px;
+  color: var(--theme-lk-tx);
+  font-size: 0.875rem;
+  font-weight: 500;
+  font-family: var(--theme-font-sans-en);
+  line-height: 1.25;
+  text-decoration: none;
+  white-space: nowrap;
+  transition-duration: 0.2s;
 }
