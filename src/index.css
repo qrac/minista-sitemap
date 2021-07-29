@@ -41,8 +41,9 @@ html {
   --theme-tx-3: #6d7272;
   --theme-bg-1: #eff4f7;
   --theme-bg-2: #d8dee2;
-  --theme-bg-3: #9ca0a1;
-  --theme-bd-1: #dbe2e2;
+  --theme-bg-3: #ffffff;
+  --theme-bd-1: #cbd4d4;
+  --theme-bd-2: #dbe2e2;
   --theme-lk-1: #00a4af;
   --theme-lk-tx: #ffffff;
   --theme-ac-1: #2ce7d2;
@@ -50,21 +51,35 @@ html {
 
 .minista-sitemap-theme-basic .minista-sitemap-ui-wrap {
   min-height: 100vh;
-  padding-top: max(2vw, 20px);
-  padding-right: max(4vw, 16px);
-  padding-left: max(4vw, 16px);
+  padding-top: 20px;
+  padding-right: 16px;
+  padding-left: 16px;
   padding-bottom: 40vh;
+}
+
+@media (min-width: 768px) {
+  .minista-sitemap-theme-basic .minista-sitemap-ui-wrap {
+    padding-top: max(2vw, 20px);
+    padding-right: max(4vw, 16px);
+    padding-left: max(4vw, 16px);
+  }
 }
 
 .minista-sitemap-theme-basic .minista-sitemap-ui-header {
   padding-bottom: 20px;
-  border-bottom: 1px solid var(--theme-bd-1);
+}
+
+@media (min-width: 768px) {
+  .minista-sitemap-theme-basic .minista-sitemap-ui-header {
+    border-bottom: 1px solid var(--theme-bd-1);
+  }
 }
 
 .minista-sitemap-theme-basic .minista-sitemap-ui-header-grid {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
   gap: 16px;
 }
 
@@ -72,10 +87,11 @@ html {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  gap: 12px;
+  gap: 8px 12px;
 }
 
 .minista-sitemap-theme-basic .minista-sitemap-ui-header-heading {
+  color: var(--theme-tx-1);
   font-size: 1.5rem;
   font-weight: 800;
   font-family: var(--theme-font-sans-en);
@@ -108,5 +124,51 @@ html {
   line-height: 1.25;
   text-decoration: none;
   white-space: nowrap;
-  transition-duration: 0.2s;
+}
+
+@media (min-width: 768px) {
+  .minista-sitemap-theme-basic .minista-sitemap-ui-main {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+}
+
+.minista-sitemap-theme-basic .minista-sitemap-ui-aside {
+  padding-top: 20px;
+}
+
+@media (min-width: 768px) {
+  .minista-sitemap-theme-basic .minista-sitemap-ui-aside {
+    border-top: 1px solid var(--theme-bd-2);
+  }
+}
+
+.minista-sitemap-theme-basic .minista-sitemap-ui-links ul {
+  list-style: none;
+}
+
+.minista-sitemap-theme-basic .minista-sitemap-ui-links a {
+  color: var(--theme-tx-2);
+  text-decoration: none;
+}
+
+@media (max-width: 767px) {
+  .minista-sitemap-theme-basic .minista-sitemap-ui-links {
+    margin-right: -16px;
+    margin-left: -16px;
+    background-color: var(--theme-bg-3);
+    border-top: 1px solid var(--theme-bd-2);
+    border-bottom: 1px solid var(--theme-bd-2);
+  }
+  .minista-sitemap-theme-basic .minista-sitemap-ui-links ul {
+    padding-left: 28px;
+  }
+  .minista-sitemap-theme-basic .minista-sitemap-ui-links a {
+    border-bottom: 1px solid var(--theme-bd-2);
+  }
+  .minista-sitemap-theme-basic .minista-sitemap-ui-links a {
+    display: block;
+    padding-top: 16px;
+    padding-bottom: 16px;
+  }
 }

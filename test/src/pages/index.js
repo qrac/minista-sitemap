@@ -10,6 +10,52 @@ dayjs.extend(require("dayjs/plugin/timezone"))
 dayjs.extend(require("dayjs/plugin/utc"))
 dayjs.tz.setDefault("Asia/Tokyo")
 
+const Link = ({ item }) => {
+  return (
+    <a className="minista-sitemap-ui-link" href={item.slug}>
+      <p className="minista-sitemap-ui-link-name">{item.name}</p>
+      <p className="minista-sitemap-ui-link-slug">{item.slug}</p>
+    </a>
+  )
+}
+
+const Links = ({ items }) => {
+  return (
+    <section className="minista-sitemap-ui-links">
+      {items && (
+        <ul className="minista-sitemap-ui-items">
+          {items.map((item, index) => (
+            <li className="minista-sitemap-ui-item" key={index}>
+              <Link item={item} />
+              {item.items && (
+                <ul className="minista-sitemap-ui-items">
+                  {item.items.map((c1_item, c1_index) => (
+                    <li className="minista-sitemap-ui-item" key={c1_index}>
+                      <Link item={c1_item} />
+                      {c1_item.items && (
+                        <ul className="minista-sitemap-ui-items">
+                          {c1_item.items.map((c2_item, c2_index) => (
+                            <li
+                              className="minista-sitemap-ui-item"
+                              key={c2_index}
+                            >
+                              <Link item={c2_item} />
+                            </li>
+                          ))}
+                        </ul>
+                      )}
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </li>
+          ))}
+        </ul>
+      )}
+    </section>
+  )
+}
+
 const Home = () => {
   const now = dayjs.tz().format("YYYY.MM.DD - HH:mm")
   return render(
@@ -43,6 +89,12 @@ const Home = () => {
           </div>
         </div>
       </header>
+      <main className="minista-sitemap-ui-main">
+        <Links items={pjt.sitemap.main.items} />
+      </main>
+      <aside className="minista-sitemap-ui-aside">
+        <Links items={pjt.sitemap.aside.items} />
+      </aside>
     </div>
   )
 }

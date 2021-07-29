@@ -1,3 +1,69 @@
 {
-  "name": "minista sitemap test"
+  "name": "minista sitemap test",
+  "sitemap": {
+    "main": {
+      "items": [
+        {
+          "name": "トップページ",
+          "slug": "/",
+          "items": [
+            {
+              "name": "配下ページ1",
+              "slug": "/1/"
+            },
+            {
+              "name": "配下ページ2",
+              "slug": "/2/"
+            },
+            {
+              "name": "配下ページ3",
+              "slug": "/3/"
+            },
+            {
+              "name": "配下ページ4",
+              "slug": "/4/",
+              "items": [
+                {
+                  "name": "配下ページ4-1",
+                  "slug": "/4/1/"
+                },
+                {
+                  "name": "配下ページ4-2",
+                  "slug": "/4/2/"
+                },
+                {
+                  "name": "配下ページ4-3",
+                  "slug": "/4/3/"
+                },
+                {
+                  "name": "配下ページ4-4",
+                  "slug": "/4/4/"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "aside": {
+      "items": [
+        {
+          "name": "運営会社",
+          "slug": "/company/"
+        },
+        {
+          "name": "よくある質問",
+          "slug": "/faq/"
+        },
+        {
+          "name": "プライバシーポリシー",
+          "slug": "/policy/"
+        },
+        {
+          "name": "お問い合わせ",
+          "slug": "/contact/"
+        }
+      ]
+    }
+  }
 }
