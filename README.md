@@ -14,16 +14,9 @@
 
 ## About
 
-コーディング納品用のサイトマップを簡単に作る CSS。主に [minista](https://github.com/qrac/minista) での利用を想定しつつ、フレームワーク非依存の CSS として設計。webpack などにバンドルされない CDN 版の利用を推奨。
+[minista](https://github.com/qrac/minista) でコーディング納品用のサイトマップを簡単に作るための React コンポーネント。
 
 ## How To Use
-
-### [CDN](https://cdn.jsdelivr.net/npm/minista-sitemap/)
-
-<!-- prettier-ignore -->
-```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/minista-sitemap@0.1.0/dist/minista-sitemap.min.css" />
-```
 
 ### [npm](https://www.npmjs.com/package/minista-sitemap)
 
@@ -32,7 +25,7 @@ $ npm install minista-sitemap
 ```
 
 ```js
-import "minista-sitemap"
+import { Wrapper, Style, Header, Main, Aside, Nav, List } from "minista-sitemap"
 ```
 
 ## Support
