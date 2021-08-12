@@ -25,7 +25,7 @@ $ npm install minista-sitemap
 ```
 
 ```js
-import { Wrapper, Style, Header, Main, Aside, Nav, List } from "minista-sitemap"
+import { Wrapper, Style, Header, Main, Nav, List } from "minista-sitemap"
 ```
 
 ## Support
