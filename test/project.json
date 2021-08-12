@@ -2,6 +2,7 @@
   "name": "minista sitemap",
   "sitemap": {
     "main": {
+      "title": "Main",
       "items": [
         {
           "name": "トップページ",
@@ -45,7 +46,8 @@
         }
       ]
     },
-    "aside": {
+    "other": {
+      "title": "Other",
       "items": [
         {
           "name": "運営会社",

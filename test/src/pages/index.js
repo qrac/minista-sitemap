@@ -26,11 +26,11 @@ const Home = () => {
       <Style />
       <Header projectName={pjt.name} date={now} buttonLink={"./dist.zip"} />
       <Main>
-        <Nav title="Main">
+        <Nav title={pjt.sitemap.main.title}>
           <List items={pjt.sitemap.main.items} />
         </Nav>
-        <Nav title="Other">
-          <List items={pjt.sitemap.aside.items} />
+        <Nav title={pjt.sitemap.other.title}>
+          <List items={pjt.sitemap.other.items} />
         </Nav>
       </Main>
     </Wrapper>
