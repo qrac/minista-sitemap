@@ -53,8 +53,13 @@ const Main = ({ children }) => {
   )
 }
 
-const Nav = ({ children }) => {
-  return <nav className="minista-sitemap-nav">{children}</nav>
+const Nav = ({ title, children }) => {
+  return (
+    <nav className="minista-sitemap-nav">
+      {title && <h2 className="minista-sitemap-nav-title">{title}</h2>}
+      {children}
+    </nav>
+  )
 }
 
 const List = ({ items }) => {
@@ -221,6 +226,13 @@ const inlineBaseStyle = css`
 
   .minista-sitemap-nav + .minista-sitemap-nav {
     margin-top: 20px;
+  }
+
+  .minista-sitemap-nav-title {
+    padding: 22px 32px;
+    font-size: 1.125rem;
+    line-height: 1;
+    border-bottom: 2px solid var(--theme-bd-1);
   }
 
   .minista-sitemap-nav
