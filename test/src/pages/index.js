@@ -3,7 +3,7 @@ import { Helmet } from "react-helmet"
 import { render } from "minista"
 import dayjs from "dayjs"
 
-import { Wrapper, Style, Header, Main, Aside, Nav, List } from "../../../main"
+import { Wrapper, Style, Header, Main, Nav, List } from "../../../main"
 
 import pjt from "../../project.json"
 
@@ -29,12 +29,10 @@ const Home = () => {
         <Nav>
           <List items={pjt.sitemap.main.items} />
         </Nav>
-      </Main>
-      <Aside>
         <Nav>
           <List items={pjt.sitemap.aside.items} />
         </Nav>
-      </Aside>
+      </Main>
     </Wrapper>
   )
 }

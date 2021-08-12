@@ -44,10 +44,6 @@ const Main = ({ children }) => {
   return <main className="minista-sitemap-main">{children}</main>
 }
 
-const Aside = ({ children }) => {
-  return <aside className="minista-sitemap-aside">{children}</aside>
-}
-
 const Nav = ({ children }) => {
   return <nav className="minista-sitemap-nav">{children}</nav>
 }
@@ -124,28 +120,14 @@ const inlineStyle = css`
 
   .minista-sitemap-wrapper {
     min-height: 100vh;
-    padding-top: 20px;
-    padding-right: 16px;
-    padding-left: 16px;
+    padding-top: max(2vw, 20px);
+    padding-right: max(4vw, 16px);
+    padding-left: max(4vw, 16px);
     padding-bottom: 40vh;
-  }
-
-  @media (min-width: 768px) {
-    .minista-sitemap-wrapper {
-      padding-top: max(2vw, 20px);
-      padding-right: max(4vw, 16px);
-      padding-left: max(4vw, 16px);
-    }
   }
 
   .minista-sitemap-header {
     padding-bottom: 20px;
-  }
-
-  @media (min-width: 768px) {
-    .minista-sitemap-header {
-      border-bottom: 1px solid var(--theme-bd-1);
-    }
   }
 
   .minista-sitemap-header-grid {
@@ -177,7 +159,7 @@ const inlineStyle = css`
     background-color: var(--theme-bg-2);
     border-radius: 3px;
     font-size: 0.75rem;
-    font-weight: 500;
+    font-weight: 400;
     font-family: var(--theme-font-sans-en);
     line-height: 1;
   }
@@ -192,28 +174,11 @@ const inlineStyle = css`
     border-radius: 6px;
     color: var(--theme-lk-tx);
     font-size: 0.875rem;
-    font-weight: 500;
+    font-weight: 600;
     font-family: var(--theme-font-sans-en);
     line-height: 1.25;
     text-decoration: none;
     white-space: nowrap;
-  }
-
-  @media (min-width: 768px) {
-    .minista-sitemap-main {
-      padding-top: 40px;
-      padding-bottom: 40px;
-    }
-  }
-
-  .minista-sitemap-aside {
-    padding-top: 20px;
-  }
-
-  @media (min-width: 768px) {
-    .minista-sitemap-aside {
-      border-top: 1px solid var(--theme-bd-2);
-    }
   }
 
   .minista-sitemap-links ul {
@@ -224,27 +189,6 @@ const inlineStyle = css`
     color: var(--theme-tx-2);
     text-decoration: none;
   }
-
-  @media (max-width: 767px) {
-    .minista-sitemap-links {
-      margin-right: -16px;
-      margin-left: -16px;
-      background-color: var(--theme-bg-3);
-      border-top: 1px solid var(--theme-bd-2);
-      border-bottom: 1px solid var(--theme-bd-2);
-    }
-    .minista-sitemap-links ul {
-      padding-left: 28px;
-    }
-    .minista-sitemap-links a {
-      border-bottom: 1px solid var(--theme-bd-2);
-    }
-    .minista-sitemap-links a {
-      display: block;
-      padding-top: 16px;
-      padding-bottom: 16px;
-    }
-  }
 `
 
-export { Wrapper, Style, Header, Main, Aside, Nav, List }
+export { Wrapper, Style, Header, Main, Nav, List }
