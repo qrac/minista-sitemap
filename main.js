@@ -4,8 +4,13 @@ const Wrapper = ({ children }) => {
   return <div className="minista-sitemap-wrapper">{children}</div>
 }
 
-const Style = ({ style = inlineStyle }) => {
-  return <style>{style}</style>
+const Style = ({ baseStyle = inlineBaseStyle, innerMaxWidth = "1000px" }) => {
+  return (
+    <>
+      <style dangerouslySetInnerHTML={{ __html: baseStyle }} />
+      <style>{`.minista-sitemap {--theme-site-width: ${innerMaxWidth}}`}</style>
+    </>
+  )
 }
 
 const Header = ({
@@ -41,7 +46,11 @@ const Header = ({
 }
 
 const Main = ({ children }) => {
-  return <main className="minista-sitemap-main">{children}</main>
+  return (
+    <main className="minista-sitemap-main">
+      <div className="minista-sitemap-main-inner">{children}</div>
+    </main>
+  )
 }
 
 const Nav = ({ children }) => {
@@ -53,10 +62,17 @@ const List = ({ items }) => {
     <ul className="minista-sitemap-list">
       {items.map((item, index) => (
         <li className="minista-sitemap-item" key={index}>
-          <a className="minista-sitemap-link" href={item.slug}>
-            <p className="minista-sitemap-link-name">{item.name}</p>
-            <p className="minista-sitemap-link-slug">{item.slug}</p>
-          </a>
+          <div className="minista-sitemap-item-content">
+            <a
+              className="minista-sitemap-item-content-link"
+              href={item.slug}
+            ></a>
+            <div className="minista-sitemap-item-content-inner">
+              <p className="minista-sitemap-item-content-name">{item.name}</p>
+              <p className="minista-sitemap-item-content-slug">{item.slug}</p>
+            </div>
+            <div className="minista-sitemap-item-content-background"></div>
+          </div>
           {item.items && List({ items: item.items })}
         </li>
       ))}
@@ -68,7 +84,7 @@ const css = (props) => {
   return props
 }
 
-const inlineStyle = css`
+const inlineBaseStyle = css`
   *,
   ::before,
   ::after {
@@ -98,15 +114,15 @@ const inlineStyle = css`
   .minista-sitemap {
     --theme-tx-1: #3e4041;
     --theme-tx-2: #4e5253;
-    --theme-tx-3: #6d7272;
+    --theme-tx-3: #8cb4c5;
     --theme-bg-1: #eff4f7;
-    --theme-bg-2: #d8dee2;
+    --theme-bg-2: #e2e7ea;
     --theme-bg-3: #ffffff;
-    --theme-bd-1: #cbd4d4;
-    --theme-bd-2: #dbe2e2;
+    --theme-bg-4: #f8fafb;
+    --theme-bd-1: #eceff1;
+    --theme-bd-2: #c0c7cb;
     --theme-lk-1: #00a4af;
     --theme-lk-tx: #ffffff;
-    --theme-ac-1: #2ce7d2;
   }
 
   .minista-sitemap {
@@ -128,6 +144,12 @@ const inlineStyle = css`
 
   .minista-sitemap-header {
     padding-bottom: 20px;
+  }
+
+  .minista-sitemap-header-inner {
+    max-width: var(--theme-site-width);
+    margin-right: auto;
+    margin-left: auto;
   }
 
   .minista-sitemap-header-grid {
@@ -181,13 +203,98 @@ const inlineStyle = css`
     white-space: nowrap;
   }
 
-  .minista-sitemap-links ul {
+  .minista-sitemap-button:hover {
+    filter: brightness(0.9);
+  }
+
+  .minista-sitemap-main-inner {
+    max-width: var(--theme-site-width);
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .minista-sitemap-nav {
+    background-color: var(--theme-bg-3);
+    border-radius: 6px;
+    overflow: hidden;
+  }
+
+  .minista-sitemap-nav + .minista-sitemap-nav {
+    margin-top: 20px;
+  }
+
+  .minista-sitemap-nav
+    > .minista-sitemap-list
+    > .minista-sitemap-item:first-child {
+    border-top: none;
+  }
+
+  .minista-sitemap-list {
+    padding-left: 32px;
     list-style: none;
   }
 
-  .minista-sitemap-links a {
-    color: var(--theme-tx-2);
-    text-decoration: none;
+  .minista-sitemap-item {
+    border-top: 1px solid var(--theme-bd-1);
+  }
+
+  .minista-sitemap-item-content {
+    position: relative;
+  }
+
+  .minista-sitemap-item-content-link {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100vw;
+    height: 100%;
+    z-index: 3;
+  }
+
+  .minista-sitemap-item-content-background {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100vw;
+    height: 100%;
+    z-index: 1;
+  }
+
+  .minista-sitemap-item-content-link:hover
+    ~ .minista-sitemap-item-content-background {
+    background-color: var(--theme-bg-4);
+  }
+
+  .minista-sitemap-item-content-link:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 24px;
+    width: 6px;
+    height: 6px;
+    border-top: 2px solid var(--theme-bd-2);
+    border-right: 2px solid var(--theme-bd-2);
+    transform: translateY(-50%) rotate(45deg);
+    z-index: 1;
+  }
+
+  .minista-sitemap-item-content-inner {
+    position: relative;
+    display: flex;
+    padding: 24px 36px 24px 0;
+    z-index: 2;
+  }
+
+  .minista-sitemap-item-content-name {
+    font-size: 0.875rem;
+    font-weight: 600;
+  }
+
+  .minista-sitemap-item-content-slug {
+    margin-left: 8px;
+    color: var(--theme-tx-3);
+    font-size: 0.75rem;
+    font-weight: 600;
   }
 `
 
