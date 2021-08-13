@@ -14,7 +14,7 @@
 
 ## About
 
-[minista](https://github.com/qrac/minista) でコーディング納品用のサイトマップを簡単に作るための React コンポーネント。
+[minista](https://github.com/qrac/minista) で納品用のサイトマップを簡単に作るための React コンポーネント。
 
 ## How To Use
 
@@ -27,6 +27,8 @@ $ npm install minista-sitemap
 ```js
 import { Wrapper, Style, Header, Main, Nav, List } from "minista-sitemap"
 ```
+
+example: [page](https://github.com/qrac/minista-sitemap/blob/main/test/src/pages/index.js) / [json](https://github.com/qrac/minista-sitemap/blob/main/test/project.json)
 
 ## Support
 
