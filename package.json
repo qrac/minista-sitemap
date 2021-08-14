@@ -1,6 +1,6 @@
 {
   "name": "minista-sitemap",
-  "description": "Site map CSS for coding delivery",
+  "description": "React component to easily create a sitemap for delivery in minista",
   "version": "0.4.0",
   "main": "./main.js",
   "files": [
