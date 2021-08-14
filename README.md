@@ -18,6 +18,9 @@
 
 [minista](https://github.com/qrac/minista) で納品用のサイトマップを簡単に作るための React コンポーネント。
 
+- 納品物に追加の CSS や JavaScript をバンドルさせない
+- 無制限に入れ子リストを作れる
+
 ## How To Use
 
 ### [npm](https://www.npmjs.com/package/minista-sitemap)
