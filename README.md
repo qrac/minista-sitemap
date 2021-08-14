@@ -37,7 +37,7 @@ example: [page](https://github.com/qrac/minista-sitemap/blob/main/test/src/pages
 
 ### Dark Mode
 
-ダークモード（`@media (prefers-color-scheme: dark)`）用の CSS Variables を追加する場合は、Style コンポーネントに `darkMode={true}` を付与します。
+ダークモード `@media (prefers-color-scheme: dark)` 用の CSS Variables を追加する場合は、Style コンポーネントに `darkMode={true}` を付与します。
 
 ```js
 <Style darkMode={true} />
