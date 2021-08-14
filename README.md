@@ -35,6 +35,22 @@ import { Wrapper, Style, Header, Main, Nav, List } from "minista-sitemap"
 
 example: [page](https://github.com/qrac/minista-sitemap/blob/main/test/src/pages/index.js) / [json](https://github.com/qrac/minista-sitemap/blob/main/test/project.json)
 
+### Dark Mode
+
+ダークモード（`@media (prefers-color-scheme: dark)`）用の CSS Variables を追加する場合は、Style コンポーネントに `darkMode={true}` を付与します。
+
+```js
+<Style darkMode={true} />
+```
+
+### Default Dark
+
+基本色をダークテーマにする場合は、Style コンポーネントに `defaultDark={true}` を付与します。
+
+```js
+<Style defaultDark={true} />
+```
+
 ## Support
 
 | Chrome | Firefox | Safari |
