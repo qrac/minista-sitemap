@@ -1,7 +1,7 @@
 {
   "name": "minista-sitemap",
   "description": "Site map CSS for coding delivery",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "main": "./main.js",
   "files": [
     "main.js"
