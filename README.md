@@ -12,6 +12,8 @@
   </a>
 </p>
 
+![image](https://i.gyazo.com/3346e4804e9655416a6e3ed0af6f94b6.png)
+
 ## About
 
 [minista](https://github.com/qrac/minista) で納品用のサイトマップを簡単に作るための React コンポーネント。
