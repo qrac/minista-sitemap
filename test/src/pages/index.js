@@ -23,7 +23,7 @@ const Home = () => {
       >
         <title>minista sitemap</title>
       </Helmet>
-      <Style />
+      <Style darkMode={true} />
       <Header projectName={pjt.name} date={now} buttonLink={"./dist.zip"} />
       <Main>
         <Nav title={pjt.sitemap.main.title}>

@@ -10,7 +10,6 @@
   },
   "devDependencies": {
     "bestzip": "^2.2.0",
-    "classnames": "^2.3.1",
     "dayjs": "^1.10.6",
     "minista": "^0.9.2",
     "minista-sitemap": "file:..",

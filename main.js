@@ -4,11 +4,31 @@ const Wrapper = ({ children }) => {
   return <div className="minista-sitemap-wrapper">{children}</div>
 }
 
-const Style = ({ baseStyle = inlineBaseStyle, innerMaxWidth = "1000px" }) => {
+const Style = ({
+  defaultDark = false,
+  darkMode = false,
+  innerMaxWidth = "1000px",
+  defaultLightStyle = inlineDefaultLightStyle,
+  defaultDarkStyle = inlineDefaultDarkStyle,
+  schemeDarkStyle = inlineSchemeDarkStyle,
+  variableStyle = inlineVariableStyle,
+  resetStyle = inlineResetStyle,
+  componentStyle = inlineComponentStyle,
+}) => {
   return (
     <>
-      <style dangerouslySetInnerHTML={{ __html: baseStyle }} />
+      <style
+        dangerouslySetInnerHTML={{
+          __html: defaultDark ? defaultDarkStyle : defaultLightStyle,
+        }}
+      />
+      {darkMode && (
+        <style dangerouslySetInnerHTML={{ __html: schemeDarkStyle }} />
+      )}
+      <style dangerouslySetInnerHTML={{ __html: variableStyle }} />
+      <style dangerouslySetInnerHTML={{ __html: resetStyle }} />
       <style>{`.minista-sitemap {--theme-site-width: ${innerMaxWidth}}`}</style>
+      <style dangerouslySetInnerHTML={{ __html: componentStyle }} />
     </>
   )
 }
@@ -89,7 +109,69 @@ const css = (props) => {
   return props
 }
 
-const inlineBaseStyle = css`
+const inlineDefaultLightStyle = css`
+  .minista-sitemap {
+    --theme-tx-1: #3e4041;
+    --theme-tx-2: #4e5253;
+    --theme-tx-3: #8cb4c5;
+    --theme-bg-1: #eff4f7;
+    --theme-bg-2: #e2e7ea;
+    --theme-bg-3: #ffffff;
+    --theme-bg-4: #f8fafb;
+    --theme-bd-1: #eceff1;
+    --theme-bd-2: #c0c7cb;
+    --theme-lk-1: #00a4af;
+    --theme-lk-tx: #ffffff;
+  }
+`
+
+const inlineDefaultDarkStyle = css`
+  .minista-sitemap {
+    --theme-tx-1: #e8e8e8;
+    --theme-tx-2: #aaaaaa;
+    --theme-tx-3: #515151;
+    --theme-bg-1: #191919;
+    --theme-bg-2: #292929;
+    --theme-bg-3: #222222;
+    --theme-bg-4: #292929;
+    --theme-bd-1: #3a3a3a;
+    --theme-bd-2: #515151;
+    --theme-lk-1: #0a736a;
+    --theme-lk-tx: #e8e8e8;
+  }
+`
+
+const inlineSchemeDarkStyle = css`
+  @media (prefers-color-scheme: dark) {
+    .minista-sitemap {
+      --theme-tx-1: #e8e8e8;
+      --theme-tx-2: #aaaaaa;
+      --theme-tx-3: #515151;
+      --theme-bg-1: #191919;
+      --theme-bg-2: #292929;
+      --theme-bg-3: #222222;
+      --theme-bg-4: #292929;
+      --theme-bd-1: #3a3a3a;
+      --theme-bd-2: #515151;
+      --theme-lk-1: #0a736a;
+      --theme-lk-tx: #e8e8e8;
+    }
+  }
+`
+
+const inlineVariableStyle = css`
+  .minista-sitemap {
+    --theme-font-sans: "Hiragino Sans", "Hiragino Kaku Gothic ProN",
+      "Noto Sans Japanese", Meiryo, "Yu Gothic Medium", sans-serif,
+      "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    --theme-font-sans-en: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+      "Helvetica Neue", Arial, sans-serif;
+    --theme-font-mono: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New",
+      Meiryo, monospace, serif;
+  }
+`
+
+const inlineResetStyle = css`
   *,
   ::before,
   ::after {
@@ -105,31 +187,9 @@ const inlineBaseStyle = css`
     -webkit-text-size-adjust: 100%;
     -webkit-tap-highlight-color: transparent;
   }
+`
 
-  .minista-sitemap {
-    --theme-font-sans: "Hiragino Sans", "Hiragino Kaku Gothic ProN",
-      "Noto Sans Japanese", Meiryo, "Yu Gothic Medium", sans-serif,
-      "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-    --theme-font-sans-en: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-      "Helvetica Neue", Arial, sans-serif;
-    --theme-font-mono: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New",
-      Meiryo, monospace, serif;
-  }
-
-  .minista-sitemap {
-    --theme-tx-1: #3e4041;
-    --theme-tx-2: #4e5253;
-    --theme-tx-3: #8cb4c5;
-    --theme-bg-1: #eff4f7;
-    --theme-bg-2: #e2e7ea;
-    --theme-bg-3: #ffffff;
-    --theme-bg-4: #f8fafb;
-    --theme-bd-1: #eceff1;
-    --theme-bd-2: #c0c7cb;
-    --theme-lk-1: #00a4af;
-    --theme-lk-tx: #ffffff;
-  }
-
+const inlineComponentStyle = css`
   .minista-sitemap {
     background: var(--theme-bg-1);
     color: var(--theme-tx-2);
