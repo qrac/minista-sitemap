@@ -33,7 +33,7 @@ $ npm install minista-sitemap
 import { Wrapper, Style, Header, Main, Nav, List } from "minista-sitemap"
 ```
 
-example: [page](https://github.com/qrac/minista-sitemap/blob/main/test/src/pages/index.js) / [json](https://github.com/qrac/minista-sitemap/blob/main/test/project.json)
+example: [page](https://github.com/qrac/minista-sitemap/blob/main/test/src/pages/index.tsx) / [json](https://github.com/qrac/minista-sitemap/blob/main/test/project.json)
 
 ### Dark Mode
 
