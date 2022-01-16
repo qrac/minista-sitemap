@@ -1,18 +1,20 @@
-import React from "react"
 import { Helmet } from "react-helmet"
 import { render } from "minista"
-import dayjs from "dayjs"
 
-import { Wrapper, Style, Header, Main, Nav, List } from "../../../main"
+import dayjs from "dayjs"
+import utc from "dayjs/plugin/utc"
+import timezone from "dayjs/plugin/timezone"
+
+import { Wrapper, Style, Header, Main, Nav, List } from "minista-sitemap"
 
 import pjt from "../../project.json"
 
-dayjs.extend(require("dayjs/plugin/timezone"))
-dayjs.extend(require("dayjs/plugin/utc"))
+dayjs.extend(timezone)
+dayjs.extend(utc)
 dayjs.tz.setDefault("Asia/Tokyo")
 
 const Home = () => {
-  const now = dayjs.tz().format("YYYY.MM.DD - HH:mm")
+  const now = dayjs().tz().format("YYYY.MM.DD - HH:mm")
   return render(
     <Wrapper>
       <Helmet
