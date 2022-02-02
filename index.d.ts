@@ -17,6 +17,7 @@ declare module "minista-sitemap" {
     date?: string
     buttonText?: string
     buttonLink?: string
+    buttonList?: ButtonListItem[]
   }>
   const Main: React.ComponentType<{ children?: React.ReactNode }>
   const Nav: React.ComponentType<{
@@ -27,6 +28,11 @@ declare module "minista-sitemap" {
     items?: listItem[]
   }>
 
+  export interface ButtonListItem {
+    text?: string
+    link?: string
+    color?: string
+  }
   export interface listItem {
     name?: string
     slug?: string

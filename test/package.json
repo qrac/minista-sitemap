@@ -4,7 +4,9 @@
   "scripts": {
     "dev": "minista",
     "build": "minista build",
-    "zip": "bestzip ./dist/dist.zip ./dist",
+    "zip": "npm run zip:source && npm run zip:dist",
+    "zip:source": "bestzip ./dist/source.zip ./src ./package.json ./package-lock.json ./tsconfig.json ./.gitignore",
+    "zip:dist": "bestzip ./dist/dist.zip ./dist",
     "delivery": "npm run build && npm run zip",
     "clean": "trash ./dist"
   },

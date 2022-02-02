@@ -15,6 +15,17 @@ dayjs.tz.setDefault("Asia/Tokyo")
 
 const Home = () => {
   const now = dayjs().tz().format("YYYY.MM.DD - HH:mm")
+  const buttonList = [
+    {
+      text: "Source Code",
+      link: "./source.zip",
+      color: "#0b84cb",
+    },
+    {
+      text: "Build Data",
+      link: "./dist.zip",
+    },
+  ]
   return render(
     <Wrapper>
       <Helmet
@@ -26,7 +37,12 @@ const Home = () => {
         <title>minista sitemap</title>
       </Helmet>
       <Style darkMode={true} />
-      <Header projectName={pjt.name} date={now} buttonLink={"./dist.zip"} />
+      <Header
+        projectName={pjt.name}
+        date={now}
+        //buttonLink={"./dist.zip"}
+        buttonList={buttonList}
+      />
       <Main>
         <Nav title={pjt.sitemap.main.title}>
           <List items={pjt.sitemap.main.items} />

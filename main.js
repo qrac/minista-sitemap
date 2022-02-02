@@ -39,6 +39,7 @@ const Header = ({
   date,
   buttonText = "Download",
   buttonLink,
+  buttonList,
 }) => {
   return (
     <header className="minista-sitemap-header">
@@ -58,6 +59,17 @@ const Header = ({
                 {buttonText}
               </a>
             )}
+            {buttonList &&
+              buttonList.map((item, index) => (
+                <a
+                  className="minista-sitemap-button"
+                  href={item.link}
+                  style={item.color && { backgroundColor: item.color }}
+                  key={index}
+                >
+                  {item.text}
+                </a>
+              ))}
           </div>
         </div>
       </div>
