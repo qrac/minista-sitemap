@@ -40,7 +40,7 @@ const Home = () => {
       <Header
         projectName={pjt.name}
         date={now}
-        //buttonLink={"./dist.zip"}
+        buttonLink={"./dist.zip"}
         buttonList={buttonList}
       />
       <Main>
