@@ -1,12 +1,12 @@
 {
   "name": "minista-sitemap",
   "description": "React component to easily create a sitemap for delivery in minista",
-  "version": "1.1.0",
-  "main": "./main.js",
-  "types": "./index.d.ts",
+  "version": "1.2.0",
+  "main": "./dist/index.js",
+  "module": "./dist/index.esm.js",
+  "types": "./dist/index.d.ts",
   "files": [
-    "main.js",
-    "index.d.ts"
+    "dist"
   ],
   "license": "MIT",
   "homepage": "https://github.com/qrac/minista-sitemap",
@@ -34,12 +34,25 @@
     "name": "QRANOKO",
     "url": "https://qranoko.jp"
   },
-  "scripts": {},
+  "scripts": {
+    "build": "tsup",
+    "build:all": "tsup && tsc",
+    "build:tsc": "tsc",
+    "test": "cd ./test && npx minista",
+    "test:dev": "cd ./test && npx minista",
+    "test:build": "cd ./test && npx minista build",
+    "prepublishOnly": "npm run build:all",
+    "clean": "trash ./dist ./test/dist"
+  },
   "prettier": {
     "semi": false
   },
   "devDependencies": {
+    "@types/react": "^17.0.39",
+    "@types/react-dom": "^17.0.11",
     "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "react-dom": "^17.0.2",
+    "tsup": "^5.11.13",
+    "typescript": "^4.6.2"
   }
 }

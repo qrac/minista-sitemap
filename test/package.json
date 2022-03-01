@@ -11,14 +11,14 @@
     "clean": "trash ./dist"
   },
   "devDependencies": {
-    "@types/react": "^17.0.38",
+    "@types/react": "^17.0.39",
     "@types/react-dom": "^17.0.11",
     "bestzip": "^2.2.0",
-    "dayjs": "^1.10.6",
-    "minista": "^1.0.1",
+    "dayjs": "^1.10.8",
+    "minista": "^1.2.0",
     "minista-sitemap": "file:..",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "typescript": "^4.5.4"
+    "typescript": "^4.6.2"
   }
 }

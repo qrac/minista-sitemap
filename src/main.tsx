@@ -1,10 +1,17 @@
-import React from "react"
+import type {
+  WrapperProps,
+  StyleProps,
+  HeaderProps,
+  MainProps,
+  NavProps,
+  ListProps,
+} from "./types.js"
 
-const Wrapper = ({ children }) => {
+export const Wrapper = ({ children }: WrapperProps) => {
   return <div className="minista-sitemap-wrapper">{children}</div>
 }
 
-const Style = ({
+export const Style = ({
   defaultDark = false,
   darkMode = false,
   innerMaxWidth = "1000px",
@@ -14,7 +21,7 @@ const Style = ({
   variableStyle = inlineVariableStyle,
   resetStyle = inlineResetStyle,
   componentStyle = inlineComponentStyle,
-}) => {
+}: StyleProps) => {
   return (
     <>
       <style
@@ -33,14 +40,14 @@ const Style = ({
   )
 }
 
-const Header = ({
+export const Header = ({
   projectName = "Project",
   dateName = "Last Update",
   date,
   buttonText = "Download",
   buttonLink,
   buttonList,
-}) => {
+}: HeaderProps) => {
   return (
     <header className="minista-sitemap-header">
       <div className="minista-sitemap-header-inner">
@@ -64,7 +71,7 @@ const Header = ({
                 <a
                   className="minista-sitemap-button"
                   href={item.link}
-                  style={item.color && { backgroundColor: item.color }}
+                  style={item.color ? { backgroundColor: item.color } : {}}
                   key={index}
                 >
                   {item.text}
@@ -77,7 +84,7 @@ const Header = ({
   )
 }
 
-const Main = ({ children }) => {
+export const Main = ({ children }: MainProps) => {
   return (
     <main className="minista-sitemap-main">
       <div className="minista-sitemap-main-inner">{children}</div>
@@ -85,7 +92,7 @@ const Main = ({ children }) => {
   )
 }
 
-const Nav = ({ title, children }) => {
+export const Nav = ({ title, children }: NavProps) => {
   return (
     <nav className="minista-sitemap-nav">
       {title && <h2 className="minista-sitemap-nav-title">{title}</h2>}
@@ -94,10 +101,10 @@ const Nav = ({ title, children }) => {
   )
 }
 
-const List = ({ items }) => {
+export const List = ({ items }: ListProps) => {
   return (
     <ul className="minista-sitemap-list">
-      {items.map((item, index) => (
+      {items?.map((item, index) => (
         <li className="minista-sitemap-item" key={index}>
           <div className="minista-sitemap-item-content">
             <a
@@ -117,7 +124,7 @@ const List = ({ items }) => {
   )
 }
 
-const css = (props) => {
+const css = (props: TemplateStringsArray) => {
   return props
 }
 
@@ -135,7 +142,7 @@ const inlineDefaultLightStyle = css`
     --theme-lk-1: #00a4af;
     --theme-lk-tx: #ffffff;
   }
-`
+`.toString()
 
 const inlineDefaultDarkStyle = css`
   .minista-sitemap {
@@ -151,7 +158,7 @@ const inlineDefaultDarkStyle = css`
     --theme-lk-1: #0a736a;
     --theme-lk-tx: #e8e8e8;
   }
-`
+`.toString()
 
 const inlineSchemeDarkStyle = css`
   @media (prefers-color-scheme: dark) {
@@ -169,7 +176,7 @@ const inlineSchemeDarkStyle = css`
       --theme-lk-tx: #e8e8e8;
     }
   }
-`
+`.toString()
 
 const inlineVariableStyle = css`
   .minista-sitemap {
@@ -181,7 +188,7 @@ const inlineVariableStyle = css`
     --theme-font-mono: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New",
       Meiryo, monospace, serif;
   }
-`
+`.toString()
 
 const inlineResetStyle = css`
   *,
@@ -199,7 +206,7 @@ const inlineResetStyle = css`
     -webkit-text-size-adjust: 100%;
     -webkit-tap-highlight-color: transparent;
   }
-`
+`.toString()
 
 const inlineComponentStyle = css`
   .minista-sitemap {
@@ -380,6 +387,4 @@ const inlineComponentStyle = css`
     font-size: 0.75rem;
     font-weight: 600;
   }
-`
-
-export { Wrapper, Style, Header, Main, Nav, List }
+`.toString()
