@@ -14,7 +14,7 @@ export const Wrapper = ({ children }: WrapperProps) => {
 export const Style = ({
   defaultDark = false,
   darkMode = false,
-  innerMaxWidth = "1000px",
+  innerMaxWidth = "800px",
   defaultLightStyle = inlineDefaultLightStyle,
   defaultDarkStyle = inlineDefaultDarkStyle,
   schemeDarkStyle = inlineSchemeDarkStyle,
@@ -203,7 +203,7 @@ const inlineResetStyle = css`
   html {
     word-break: break-word;
     -ms-text-size-adjust: 100%;
-    -webkit-text-size-adjust: 100%;
+    -webkit-text-size-adjust: none;
     -webkit-tap-highlight-color: transparent;
   }
 `.toString()
@@ -372,6 +372,7 @@ const inlineComponentStyle = css`
   .minista-sitemap-item-content-inner {
     position: relative;
     display: flex;
+    align-items: center;
     padding: 24px 36px 24px 0;
     z-index: 2;
   }
